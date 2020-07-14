@@ -1,0 +1,27 @@
+﻿@model PracticeShop.Models.Game
+
+    <form method="post" asp-controller="Store" asp-action="AddGame">
+        <div>
+            <label asp-for="Name"></label><br />
+            <input type="text" asp-for="Name" />
+        </div>
+
+        <div>
+            <label asp-for="Genre"></label><br />
+            <input type="text" asp-for="Genre" />
+        </div>
+
+        <div>
+            <label asp-for="Publisher"></label><br />
+            <input type="text" asp-for="Publisher" />
+        </div>
+
+        <div>
+            <label asp-for="Price"></label><br />
+            <input type="number" asp-for="Price" />
+        </div>
+
+        <div>
+            <input type="submit" value="Add" />
+        </div>
+    </form>
