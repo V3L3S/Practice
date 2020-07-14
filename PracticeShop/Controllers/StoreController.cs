@@ -9,9 +9,11 @@ using PracticeShop.ViewModels;
 using System.Text.Json;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PracticeShop.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class StoreController : Controller
     {
         private StoreContextDB db;
