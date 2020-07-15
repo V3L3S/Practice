@@ -13,7 +13,6 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace PracticeShop.Controllers
 {
-    [Authorize(Roles = "admin")]
     public class StoreController : Controller
     {
         private StoreContextDB db;
@@ -24,24 +23,17 @@ namespace PracticeShop.Controllers
         }
 
         [HttpGet]
-        public IActionResult ShowLibrary()
-        {
-            return View(Read());
-        }
+        public IActionResult ShowLibrary() => View(Read());
 
         [HttpGet]
-        public IActionResult GamesList()
-        {
-            return View(db.Games.OrderBy(g => g.Name).ToList());
-        }
+        public IActionResult GamesList() => View(db.Games.OrderBy(g => g.Name).ToList());
 
         [HttpGet]
-        public IActionResult AddGame()
-        {
-            return View();
-        }
+        [Authorize(Roles = "Администратор")]
+        public IActionResult AddGame() => View();
 
         [HttpPost]
+        [Authorize(Roles = "Администратор")]
         public async Task<IActionResult> AddGame(Game model)
         {
             db.Games.Add(model);
@@ -50,16 +42,10 @@ namespace PracticeShop.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddToLibrary(int gameID)
-        {
-            return View("AddToLibrary", AddGameToLibrary(gameID));
-        }
+        public IActionResult AddToLibrary(int gameID) => View("AddToLibrary", AddGameToLibrary(gameID));
 
         [HttpPost]
-        public IActionResult BuyGame(int gameID)
-        {
-            return View("BuyGame", AddGameToLibrary(gameID));
-        }
+        public IActionResult BuyGame(int gameID) => View("BuyGame", AddGameToLibrary(gameID));
 
         public String AddGameToLibrary(int gameID)
         {

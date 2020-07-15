@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using PracticeShop.Models;
@@ -9,18 +10,22 @@ using PracticeShop.ViewModels;
 
 namespace PracticeShop.Controllers
 {
+    [Authorize(Roles = "Администратор")]
     public class RolesController : Controller
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<User> _userManager;
+
         public RolesController(RoleManager<IdentityRole> roleManager, UserManager<User> userManager)
         {
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
         public IActionResult Index() => View(_roleManager.Roles.ToList());
 
         public IActionResult Create() => View();
+
         [HttpPost]
         public async Task<IActionResult> Create(string name)
         {
@@ -74,6 +79,7 @@ namespace PracticeShop.Controllers
 
             return NotFound();
         }
+
         [HttpPost]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
         {

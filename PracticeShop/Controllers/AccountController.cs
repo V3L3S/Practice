@@ -19,11 +19,10 @@ namespace PracticeShop.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
         [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+        public IActionResult Register() => View();
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
@@ -48,10 +47,8 @@ namespace PracticeShop.Controllers
         }
 
         [HttpGet]
-        public IActionResult Login(string returnUrl = null)
-        {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
-        }
+        public IActionResult Login(string returnUrl = null) => View(new LoginViewModel { ReturnUrl = returnUrl });
+        
 
         [HttpPost]
         [ValidateAntiForgeryToken]
