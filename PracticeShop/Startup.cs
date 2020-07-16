@@ -47,11 +47,7 @@ namespace PracticeShop
 
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "wwwroot")),
-                RequestPath = new PathString("/wwwroot")
-            });
+            app.UseStaticFiles();
 
             app.UseRouting();
 

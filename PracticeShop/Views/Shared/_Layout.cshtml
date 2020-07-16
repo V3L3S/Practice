@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <link rel="stylesheet" href="../wwwroot/css/index.css">
-    <link rel="stylesheet" href="../wwwroot/css/normalize.css">
-    <script src="../wwwroot/js/index.js"></script>
-    <link href="https://allfont.ru/allfont.css?fonts=squealer-embossed" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="~/css/index.css">
+    <script src="~/js/index.js"></script>
+    @*<link href="https://allfont.ru/allfont.css?fonts=squealer-embossed" rel="stylesheet" type="text/css" />*@
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <a href="#"><img class="logo" src="../wwwroot/image/logo.png"></a>
+        <a href="#"><img class="logo" src="~/image/logo.png"></a>
         <div class="dropdown">
             <button class="dropbtn">MENU</button>
             <div class="dropdown-content menu">
@@ -36,25 +36,40 @@
             </form>
         </div>
     </header>
-    <div class="tag">
-        <img src="../wwwroot/image/tag.png">
-        <p>GAMES ARE RELIGION</p>
-    </div>
+    <div>
+        <div class="tag">
+            <img src="~/image/tag.png">
+            <p>GAMES ARE RELIGION</p>
+        </div>
 
-    <div class="main">
-        <aside class="side-l">
-            <img src="../wwwroot/image/side.png">
-        </aside>
-        <main>
-            @RenderBody()
-        </main>
-        <aside class="side-r">
-            <img src="../wwwroot/image/side.png">
-        </aside>
+        <div class="main">
+            <aside class="side-l">
+                <div class="side-div">
+
+                    <!-- вот место для контента пидор -->
+
+                </div>
+                <img src="~/image/side.png">
+            </aside>
+            <main>
+
+                <!-- и вот место для ктаблици пидор, потом стиль для нее сделаю гондон -->
+                @RenderBody();
+
+            </main>
+            <aside class="side-r">
+                <div class="side-div">
+
+                    <!--и вот блять место для контента пидор -->
+
+                </div>
+                <img src="~/image/side.png">
+            </aside>
+        </div>
     </div>
     <footer>
     </footer>
-   </body>
+</body>
 </html>
 
 @*<!DOCTYPE html>

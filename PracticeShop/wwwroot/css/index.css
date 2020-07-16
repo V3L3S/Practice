@@ -1,18 +1,21 @@
 
 header{
-	min-width:1024px;
+	min-width:100%;
 	position:relative;
 	height:inherit;
 	width:100%;
-	display:inline-block;
+	display:flex;
 	background:linear-gradient(#ff0000,#390000);
 	top: 0;
 	left: 0;
 	font-family: 'Squealer Embossed', arial;
+	
 }
 
-body{
-	background-color:black;
+body {
+	background-color: black;
+	background-image: url(../image/back/back10.jpg);
+	background-size:;
 }
 
 
@@ -92,19 +95,21 @@ header input::-webkit-input-placeholder{
 	text-align:center;
 }
 
-div.tag{
-	height:content;
-	font-family: 'Squealer Embossed', arial;
-	text-align:center;
-	color:White;
-	font-size:50px;
+div.tag {
+	background-image:url(../image/back/back7.jpg);
+	background-size: inherit auto;
+	height: content;
+	font-family: 'squealer embossed', arial;
+	text-align: center;
+	color: White;
+	font-size: 50px;
 }
 div.tag img{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 
-	height:300px;
+	height:auto;
 	width:400px;
 }
 div.tag p{
@@ -113,31 +118,29 @@ div.tag p{
 	left: 0;
 	bottom: 0;
 	width: 100%;
-	
-	
-	
 }
 
 aside{
-	width:250px;;
+	width:300px;;
 	height:justify;
 	float:left;
 }
 
-main{
+main {
 	border-style: solid;
-	border-image-slice:140;
-	border-image-width:45px;
-	border-image-outset:0px;
-	border-image-repeat:round round;
+	border-image-slice: 140;
+	border-image-width: 45px;
+	border-image-outset: 0px;
+	border-image-repeat: round round;
 	border-image-source: url(../image/border/border11.png);
-	
-	width:100%;
-	height:1200px;
-	float:left;
-	
-	background-image:url(../image/back/back4.png);
-	background-size:100px;
+	width: 100%;
+	min-width: 500px;
+	height: content;
+	float: left;
+	background-image: url(../image/back/back4.png);
+	background-size: 100px;
+	margin: 0px 5px 0px 10px;
+	;
 }
 
 aside img{
@@ -154,4 +157,17 @@ aside img{
 .main{
 	display:flex;
 	height:content;
+}
+
+.side-div {
+	width: inherit;
+	height: content;
+	border-style: solid;
+	border-image-slice: 140;
+	border-image-width: 45px;
+	border-image-outset: 0px;
+	border-image-repeat: round round;
+	border-image-source: url(../image/border/border11.png);
+	background-image: url(../image/back/back4.png);
+	background-size: 100px;
 }
