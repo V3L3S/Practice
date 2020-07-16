@@ -136,6 +136,7 @@ main {
 	width: 100%;
 	min-width: 500px;
 	height: content;
+	max-width:700px;
 	float: left;
 	background-image: url(../image/back/back4.png);
 	background-size: 100px;
